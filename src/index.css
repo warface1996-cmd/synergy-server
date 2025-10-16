@@ -1,0 +1,35 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body,#root{height:100%}
+*{box-sizing:border-box}
+:root{color-scheme:light}
+.dark{color-scheme:dark}
+
+/* Only cards hover animate */
+.card{ @apply rounded-2xl p-5 bg-brand-light text-[#2a2f45] shadow-neo transition-transform; }
+.card:hover{ transform: translateY(-2px); }
+.dark .card{ @apply bg-[#171b2a] text-[#e6e9f5] shadow-neodark; }
+
+.btn{ @apply rounded-full px-4 py-2 font-medium bg-white text-[#2a2f45] shadow-neo; }
+.dark .btn{ @apply bg-[#171b2a] text-white shadow-neodark; }
+
+.aside-btn{ @apply w-full text-left rounded-2xl p-4 bg-brand-light shadow-neo dark:bg-[#171b2a] dark:shadow-neodark transition; }
+.aside-btn:hover{ transform: translateY(-2px); }
+
+.modal-backdrop{ @apply fixed inset-0 bg-black/40 flex items-center justify-center z-50; }
+.modal{ @apply bg-brand-light dark:bg-[#171b2a] text-inherit rounded-2xl p-6 w-[min(900px,92vw)] shadow-neo dark:shadow-neodark; }
+
+/* Cat */
+#cat{ position:fixed; bottom:0; left:50%; transform:translateX(-50%) translateY(100%); width:220px; z-index:40; transition:transform .6s cubic-bezier(.2,.8,.2,1); }
+#cat.visible{ transform:translateX(-50%) translateY(0); }
+#bubble{ position:fixed; bottom:170px; left:50%; transform:translateX(-50%); background:#fff; color:#2a2f45; padding:8px 12px; border-radius:16px; opacity:0; transition:opacity .3s, transform .3s; box-shadow: 8px 8px 16px #cfd3df, -8px -8px 16px #ffffff; }
+#bubble.show{ opacity:1; transform:translateX(-50%) translateY(-6px); }
+.dark #bubble{ background:#0f1320; color:#fff; box-shadow: 8px 8px 16px #0b0e18, -8px -8px 16px #1e2438; }
+
+.dark .digital{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; text-shadow: 0 0 8px #5a6ee1, 0 0 12px #5a6ee1; color: #a7c1ff; }
+.react-calendar{ width:100%; background:transparent; border:none }
+.react-calendar__navigation button{ padding:6px 10px; border-radius:12px }
+.react-calendar__tile{ padding:8px 0; border-radius:12px }
